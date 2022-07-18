@@ -34,7 +34,7 @@
 - 07장. AWS RDS : README 파일로 정리
 - 08장. EC2 : README 파일로 정리
 - 09장. Travis CI
-- 10장. 
+- 10장. 무중단 
 
 ### 벌금
 
