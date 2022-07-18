@@ -3,7 +3,7 @@
 ## 참여자
 |[강민지](https://github.com/nitronium102)|[김민주](https://github.com/MINJU-KIMmm)|[권지윤](https://github.com/june0216)|[김명지](https://github.com/Gom3rye)|
 |---|---|---|---|
-|![minju](https://avatars.githubusercontent.com/u/81242672?v=4)|![minji](https://github.com/nitronium102.png)||
+|![minji](https://github.com/nitronium102.png)|![minju](https://avatars.githubusercontent.com/u/81242672?v=4)|![jiyun](https://github.com/june0216.png)|![myungji](https://github.com/Gom3rye.png)
 
 ## 스터디 규칙
 
