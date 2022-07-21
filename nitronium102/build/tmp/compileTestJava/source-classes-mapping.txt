@@ -1,2 +1,4 @@
+com/spring/efub/dto/HelloResponseDtoTest.java
+ com.spring.efub.dto.HelloResponseDtoTest
 com/spring/efub/HelloControllerTest.java
  com.spring.efub.HelloControllerTest

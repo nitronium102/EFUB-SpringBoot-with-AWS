@@ -1,4 +1,6 @@
 com/spring/efub/Application.java
  com.spring.efub.Application
+com/spring/efub/web/dto/HelloResponseDto.java
+ com.spring.efub.web.dto.HelloResponseDto
 com/spring/efub/web/HelloController.java
  com.spring.efub.web.HelloController
