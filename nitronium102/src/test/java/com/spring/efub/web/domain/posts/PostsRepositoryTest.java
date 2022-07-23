@@ -1,7 +1,5 @@
 package com.spring.efub.web.domain.posts;
 
-import com.spring.efub.web.domain.Posts;
-import com.spring.efub.web.domain.PostsRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

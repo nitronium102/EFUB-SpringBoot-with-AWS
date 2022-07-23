@@ -1,4 +1,4 @@
-package com.spring.efub.web.domain;
+package com.spring.efub.web.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
