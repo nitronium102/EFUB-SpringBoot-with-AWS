@@ -1,6 +1,5 @@
-package com.spring.efub.dto;
+package com.spring.efub.web.dto;
 
-import com.spring.efub.web.dto.HelloResponseDto;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
