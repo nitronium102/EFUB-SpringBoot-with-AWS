@@ -1,5 +1,6 @@
 package com.spring.efub.web.domain.posts;
 
+import com.spring.efub.web.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter // 절대 setter 메소드는 만들지 않음
 @NoArgsConstructor // 기본 생성자 자동 추가
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
 	@Id // pk
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // pk의 생성 규칙
