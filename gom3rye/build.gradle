@@ -10,7 +10,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    jcenter()
+    // jcenter() 는 2022.02.01부터 사용x
 }
 
 // for Junit 5
