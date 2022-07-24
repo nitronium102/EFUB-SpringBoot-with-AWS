@@ -1,5 +1,6 @@
 package com.efub.minju.springboot.domain.posts;
 
+import com.efub.minju.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @Getter //클래스내 모든 필드의 Getter 메소드 생성
 @NoArgsConstructor //기본 생성자 자동 추가
 @Entity //테이블과 링크될 클래스임을 나타냄
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id //pk 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY) //pk의 생성 규칙. GenerationType.IDENTITY 추가해야 auto_increment됨(in 스프링부트2.0)
