@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.6' // 스프링 부트 그레이들 플러그인
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE' // 의존성 관리 플러그인 버전
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+//각종 의존성(라이브러리)들을 어떤 원격 저장소에서 받을지를 정한다.
+repositories {
+    mavenCentral()
+    //jcenter() 은 현재 지원 중단
+}
+
+//프로젝트 개발이 필요한 의존성들을 선언하는 곳이다.
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    // 웹에 관련된 의존성 관리. json이나 tomcat등이 들어있다.
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    // 테스트를 위한 라이브러리가 들어있다.
+    implementation('org.projectlombok:lombok')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+//Junit5를 사용하기 위해서는 필수로 선언
+test {
+    useJUnitPlatform()
+}
