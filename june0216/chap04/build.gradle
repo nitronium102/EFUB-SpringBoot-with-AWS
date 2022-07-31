@@ -33,8 +33,16 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 
+    implementation('org.springframework.session:spring-session-jdbc')
     //템플릿 엔진
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
+
+    //소셜 로그인 등 클라이언트 입장에서 소셜 기능 구현 시 필요한 의존성
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+
+    //스프링시큐리티 테스트를 위한 여러 도구를 지원함
+    testImplementation("org.springframework.security:spring-security-test")
+
 
     // h2 데이터베이스 사용을 위한 라이브러리이다.(별도 설치가 필요없이 프로젝트 의존성마능로 관리할 수 있다.)
     // H2는 인메모리 관계형 데이터베이스로 별도의 설치가 필요없이 프로젝트 의존성만으로 관리 가능

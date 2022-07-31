@@ -1,6 +1,7 @@
 package com.example.springboot.service.posts;
 
 
+
 import com.example.springboot.domain.posts.Posts;
 import com.example.springboot.domain.posts.PostsRepository;
 import com.example.springboot.web.dto.PostsListResponseDto;

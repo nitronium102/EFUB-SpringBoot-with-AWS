@@ -4,7 +4,20 @@
 <div class = "col-md-12">
     <div class = "row">
         <div class = "col-md-6">
-        <a href="/posts/save" role = "button" class = "btn btn-primary">글 등록</a>
+            <a href="/posts/save" role = "button" class = "btn btn-primary">글 등록</a>
+
+            {{#userName}}//userName 노출
+                Logged in as: <span id = "user">{{userName}}</span>
+                <a href="/logout" class = "btn btn-info active" role="button">Logout</a>
+                <!-- 시큐리티에서 URL기본제공-->
+
+            {{/userName}}
+            {{^userName}}<!--//userName에 값이 존재하지 않는 경우 -> 로그인 버튼 보이게-->
+                <a href="/oauth2/authorization/google" class = "btn btn-success active" role = "button">Google login</a>
+                <a href="/oauth2/authorization/naver" class = "btn btn-secondary active" role = "button">Naver login</a>
+                <!-- 시큐리티에서 URL기본제공-->
+            {{/userName}}
+
     </div>
 </div>
 

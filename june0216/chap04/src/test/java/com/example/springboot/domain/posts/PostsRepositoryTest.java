@@ -4,14 +4,12 @@ package com.example.springboot.domain.posts;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 
@@ -19,7 +17,7 @@ import java.util.List;
 public class PostsRepositoryTest {
 
     @Autowired
-    PostsRepository postsRepository;
+    private PostsRepository postsRepository;
 
     @AfterEach//JUnit에서 단위 테스트가 끝날때마다 수행되는 메서드, 다음 테스트에 H2에 남아있는 데이터가 영향을 주지 않기 위해 삭제
     public void cleanUp()
