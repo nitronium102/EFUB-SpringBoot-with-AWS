@@ -30,9 +30,13 @@ dependencies {
     implementation('com.h2database:h2') //인메모리 관계형 데이터베이스, 별도의 설치 X, 재시작할 때마다 초기화 -> 테스트 용도 굿
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation('org.springframework.security:spring-security-test')
 
     //머스테치
     implementation('org.springframework.boot:spring-boot-starter-mustache')
+
+    //소셜로그인
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
 }
 
 tasks.named('test') {
