@@ -1,4 +1,10 @@
-com/spring/efub/dto/HelloResponseDtoTest.java
- com.spring.efub.dto.HelloResponseDtoTest
+com/spring/efub/web/PostsApiControllerTest.java
+ com.spring.efub.web.PostsApiControllerTest
+com/spring/efub/web/domain/posts/PostsRepositoryTest.java
+ com.spring.efub.web.domain.posts.PostsRepositoryTest
+com/spring/efub/web/IndexControllerTest.java
+ com.spring.efub.web.IndexControllerTest
+com/spring/efub/web/dto/HelloResponseDtoTest.java
+ com.spring.efub.web.dto.HelloResponseDtoTest
 com/spring/efub/HelloControllerTest.java
  com.spring.efub.HelloControllerTest
