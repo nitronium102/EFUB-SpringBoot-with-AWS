@@ -1,5 +1,6 @@
 package com.gom3rye.book.springboot.domain.posts;
 
+import com.gom3rye.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.prefs.BackingStoreException;
 
 // Entity 클래스에서는 절대 Setter 메소드를 만들지 않는다.
 
@@ -16,7 +18,7 @@ import javax.persistence.Id;
 @NoArgsConstructor // 기본 생성자 자동 추가
 @Entity // 테이블과 링크될 클래스임을 나타냄
 
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id // 해당 테이블의 PK 필드 나타냄
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK 생성 규칙 나타냄, GenerationType.IDENTITY 옵션으로 auto_increment 됌
     private Long id;
@@ -34,5 +36,9 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
     }
 }

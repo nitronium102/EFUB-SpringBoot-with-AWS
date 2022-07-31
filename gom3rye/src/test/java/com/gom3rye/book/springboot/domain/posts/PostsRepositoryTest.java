@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 @SpringBootTest // H2 데이터베이스를 자동으로 실행해준다.
@@ -37,6 +39,29 @@ public class PostsRepositoryTest {
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);
-
     }
+    @Test
+    public void BaseTimeEntity_등록(){
+        // given
+        LocalDateTime now = LocalDateTime.of(2022,7,24,0,0, 0);
+        postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+
+
+        // when
+        List<Posts> postsList = postsRepository.findAll();
+
+        // then
+        Posts posts = postsList.get(0);
+
+        System.out.println(">>>>>>>>> createDate="+ posts.getCreatedDate() +
+                ", modifiedDate="+posts.getModifiedDate());
+
+        assertThat(posts.getCreatedDate()).isAfter(now);
+        assertThat(posts.getModifiedDate()).isAfter(now);
+    }
+
 }
