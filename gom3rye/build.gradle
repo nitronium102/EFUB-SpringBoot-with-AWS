@@ -29,9 +29,9 @@ dependencies {
     testImplementation('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
 
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa') // Spring Data Jpa 추상화 라이브러리, JPA관련 라이브러리 버전 관리
     implementation("org.mariadb.jdbc:mariadb-java-client")
-    implementation('com.h2database:h2')
+    implementation('com.h2database:h2') // h2 : 인메모리 관계형 DB, JPA 테스트, 로컬 환경에서의 구동 때 사용 예정
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
