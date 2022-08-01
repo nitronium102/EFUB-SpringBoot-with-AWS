@@ -21,7 +21,7 @@ test {
 dependencies {
 
     implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.springframework.boot:spring-boot-starter-mustache')
+    implementation('org.springframework.boot:spring-boot-starter-mustache') // 머스테치 스타터 의존성 등록
 
     // lombok
     implementation('org.projectlombok:lombok')
@@ -34,4 +34,5 @@ dependencies {
     implementation('com.h2database:h2') // h2 : 인메모리 관계형 DB, JPA 테스트, 로컬 환경에서의 구동 때 사용 예정
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    //testImplementation('org.springframework.boot:spring-boot-starter-mustache');
 }
