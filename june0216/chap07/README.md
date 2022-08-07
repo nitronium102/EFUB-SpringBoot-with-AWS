@@ -17,7 +17,7 @@
 
   클라우드 서비스에 가장 적합한 데이터베이스이기 때문에 많은 회사가 Amazon Aurora를 선택
 
-    - Maria DB는 MySQL대비 다양한 기능, 성능 향상 등의 장점으로 추천
+  - Maria DB는 MySQL대비 다양한 기능, 성능 향상 등의 장점으로 추천
 - 템플릿
 
   프리티어
@@ -46,7 +46,7 @@ RDS를 처음 생성하면 몇 가지 설정을 필수로 해야 한다.
 -Max Connection
 
 - 파라미터 그룹 → 파라미터 그룹 생성 → 파라미터 그룹 세부 정보
-    - 방금 생성한 MariaDB와 같은 버전을 맞춰야 한다.
+  - 방금 생성한 MariaDB와 같은 버전을 맞춰야 한다.
 - 생성 완료 되면 파라미터 글부 목록 창에 새로 생성된 그룹을 볼 수 있다.
 - 파라미터 편집→ 편집모드 → 설정값 변경시작
 
@@ -105,7 +105,9 @@ RDS의 Max Connection은 인스턴스 사양에 따라 자동으로 정해짐
 
 데이터베이스가 선택된 상태에서 현재의 character_set, collection 설정을 확인한다.
 
-“show variables like ‘%c’; “
+```java
+show variables like ‘%c’; 
+```
 
 쿼리 결과를 보면 다른 필드들은 모두 utf8mb4가 잘 적용되었는데 character_set_database, collaction_connection 2가지 항목이 latin1로 되어 있다.
 
@@ -113,42 +115,48 @@ RDS의 Max Connection은 인스턴스 사양에 따라 자동으로 정해짐
 
 다음의 쿼리를 실행하자
 
-ALTER DATABASE 데이터베이스명
-
+```java
+ALTER DATABASE 데이터베이스명 
 CHARACTER SET = ‘utf8mb4’
-
 COLLATE = ‘utf8mb4_general_ci’ ;
+```
 
 쿼리 수행 후 다시 한 번 character set을 확인 → 성공적으로 모든 항목이 utf8mb4로 변경된 것을 확인
 
 - 타임존 확인
 
+```java
 select @@time_zone, now();
+```
 
 - 한글명이 잘 들어가는지 간단한 테이블 생성과 insert 쿼리 실행
 
   테이블 생성은 인코딩 설정 변경 전에 생성되면 안 된다. 만들어질 당시의 설정값을 그대로 유지하고 있어, 자동 변경이 되지 않고 강제로 변경해야만 한다.
 
-  CREATE TABLE test(
-
-  id bigint(20) NOT NULL AUTO_INCREMENT,
-
-  content varchar(255) DEFAULT NULL,
-
-  PRIMARY KEY(id)
-
-  ) ENGINE=InnoDB;
-
-  insert into test(content) values (’테스트');
-
-  select * from test;
+    ```java
+    CREATE TABLE test(
+      id bigint(20) NOT NULL AUTO_INCREMENT, 
+    
+      content varchar(255) DEFAULT NULL, 
+    
+      PRIMARY KEY(id)
+    
+    )ENGINE=InnoDB;
+    
+    insert into test(content) values (’테스트');
+    
+    select * from test;
+    ```
 
 
 # 7.4 EC2에서 RDS에서 접근 확인
 
 - EC2에 ssh 접속을 진행
 - RDS 접근 명령어 입력
-    - mysql -u [계정] -p -h [Host 주소]
-    - 패스워드 입력
+  - mysql -u [계정] -p -h [Host 주소]
+  - 패스워드 입력
 - 실제로 생성한 RDS가 맞는지 간단한 쿼리를 실행
-    - show database;
+
+    ```java
+    show database;
+    ```
